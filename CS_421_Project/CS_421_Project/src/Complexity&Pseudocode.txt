@@ -1,0 +1,57 @@
+PSEUDOCODE:
+
+FUNCTION main
+
+	create new scanner																1
+	ask user to enter the file directory path										1
+	
+	TRY
+		read the file into string by line											n
+		create new file																1
+		create new scanner from the new file										1
+		create new ArrayList as holder array										1
+		
+		WHILE(file has more ints)													n
+			create temp int to store next int										n
+			insert temp into ArrayList												n	
+		
+		close files																	2
+		
+		create new int index and set to 0											1
+		create new int vertices and set to ArrayList at index 0						1
+		
+		create new vertices matrix/2d array with lengths of vertices variable		1
+		FOR(0 to vertices value - 1)												n
+			FOR(0 to vertices value - 1)											n^2
+				set matrix index value to ArrayList at index+1						n^2
+				increase index value by 1											n^2
+		
+		create boolean value of simpleGraph and set to true							1
+		for(0 to vertices value - 1)												n
+			if matrix at current index does not equal 0								n
+				set simple graph to false											n
+				
+		FOR(0 to vertices value - 1)												n	
+			FOR(0 to vertices value - 1)											n^2
+				if matrix at current index is greater than 1						n^2
+					set simple graph to false										n^2
+		
+		print result of simple graph determination									1
+		
+	CATCH
+		exception handling print statement if file does not exist					1
+
+END main
+
+COMPLEXITY:
+
+input size of file is n so:
+
+g(m) = n
+
+f(n) = 6n^2 + 9n + 13
+
+h(m) = (f o g)(m) = f(g(m)) = 6(n)^2 + 9(n) + 13 = 6n^2 + 9n + 13
+
+
+
